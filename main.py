@@ -23,9 +23,12 @@ def character_count():
                 counts[x] += 1
             else :
                 counts[x] = 1
-            
-                
-    print (counts)
+        sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)
+        for char, count in sorted_counts :
+            if char in alphabet:
+                print (f"The '{char}' character was found {count} times")
+                     
+    
 
 
 character_count()
